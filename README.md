@@ -1,4 +1,4 @@
-# LAB on Hyper-V
+# LAB on local Hyper-V
 ## based on Windows 11 (should also word on Windows 10)
 
 Here you will find some usefull PowerShell scripts, which will make a LAB deployement on Hyper-V (local) faster and hopefully also easier.

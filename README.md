@@ -53,3 +53,6 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 |$ParentPath = ""|where to find your prepared Windows Server vhdx file |
 |$VMList = ""| all of your VM machines list|
 |$VM = ""| temporary variable for vm creation|
+
+
+The Preparation script is easy to enhance for more then the predefined number of VM's. In the same way you can also add your ISO Files for the staging.

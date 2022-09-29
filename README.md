@@ -31,7 +31,7 @@ the other way is to download the products from your visualstudio subscription: h
 
 Here you will find some usefull PowerShell scripts, which will make a LAB deployement on Hyper-V (local) faster and hopefully also easier.
 
-### Scripts included until 23.09.2022
+### Scripts included from 23.09.2022
 * VM Prepopulation
 * Install and Setup AD
 * rename and domainjoin VM
@@ -55,4 +55,4 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 |$VM = ""| temporary variable for vm creation|
 
 
-The Preparation script is easy to enhance for more then the predefined number of VM's. In the same way you can also add your ISO Files for the staging.
+The Preparation script is easy to be enhanced for more then the predefined number of VM's. In the same way you can also add your ISO Files for the staging.

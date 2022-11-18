@@ -4,7 +4,7 @@
 
 $Domain = "SFB15.lab"
 $NetBIOS = "SFB15"
-$Safemodepass = "**yourpasswordhere**"
+$Safemodepass = "PhaggyK26"
 $SecureSafeMmodePass = ConvertTo-SecureString $Safemodepass -AsPlainText -Force
 
 Install-WindowsFeature AD-Domain-Services -IncludeAllSubFeature -IncludeManagementTools

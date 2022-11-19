@@ -32,7 +32,7 @@ the other way is to download the products from your visualstudio subscription: h
 Here you will find some usefull PowerShell scripts, which will make a LAB deployement on Hyper-V (local) faster and hopefully also easier.
 
 ### Scripts included from 23.09.2022
-* VM Prepopulation
+* VM Prepopulation (Working on GUI and automation)
 * Install and Setup AD
 * rename and domainjoin VM
 * install all prerequisites for office online server

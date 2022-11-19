@@ -48,6 +48,7 @@ Labs in Functions:
 
 Import-Module Hyper-V
 Add-Type -assembly System.Windows.Forms
+Add-Type -AssemblyName PresentationFramework
 
 $main_form = New-Object System.Windows.Forms.Form
 $main_form.Text ='Local Hyper-V LAB Setup'
@@ -590,6 +591,8 @@ $VMList = ""
 $VM = ""
 }
 
+# XAML location
+$xamlFile = "C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\MainWindow.xaml"
 ### Example VM Creation
 # $VMName = "VMNAME"
 # $VMPath = "E:\Hyper-V"

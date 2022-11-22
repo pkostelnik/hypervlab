@@ -592,7 +592,7 @@ $VM = ""
 }
 
 # XAML location
-$xamlFile = "C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\MainWindow.xaml"
+$xamlFile = ".\wpf\WpfApp1\WpfApp1\MainWindow.xaml"
 
 #create window
 $inputXML = Get-Content $xamlFile -Raw

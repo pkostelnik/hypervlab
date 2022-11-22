@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp1", "WpfApp1\WpfApp1.csproj", "{CE1C7DE7-783D-4492-8E16-5D8E37E42E27}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "localhypervlab", "WpfApp1\localhypervlab.csproj", "{CE1C7DE7-783D-4492-8E16-5D8E37E42E27}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

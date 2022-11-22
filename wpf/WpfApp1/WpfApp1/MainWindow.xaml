@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Local Hyper-V LAB" Height="450" Width="600">
     <Grid>
-        <ComboBox x:Name="LAB_selector" HorizontalAlignment="Left" Margin="163,21,0,0" VerticalAlignment="Top" Width="390" Cursor="Hand"/>
+        <ComboBox x:Name="LAB_selector" HorizontalAlignment="Left" Margin="163,21,0,0" VerticalAlignment="Top" Width="427" Cursor="Hand" SelectionChanged="LAB_selector_SelectionChanged"/>
         <TextBox HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" Text="Select your LAB type" VerticalAlignment="Top" Width="148" TextChanged="TextBox_TextChanged"/>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="372" Margin="0,52,0,0" VerticalAlignment="Top" Width="580">
             <TextBox HorizontalAlignment="Center" Height="352" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="560"/>

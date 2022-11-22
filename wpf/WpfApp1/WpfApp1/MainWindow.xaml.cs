@@ -29,5 +29,10 @@ namespace WpfApp1
         {
 
         }
+
+        private void LAB_selector_SelectionChanged()
+        {
+
+        }
     }
 }

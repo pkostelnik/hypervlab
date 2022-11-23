@@ -49,6 +49,7 @@ Labs in Functions:
 Import-Module Hyper-V
 Add-Type -assembly System.Windows.Forms
 Add-Type -AssemblyName PresentationFramework
+
 <#
 $main_form = New-Object System.Windows.Forms.Form
 $main_form.Text ='Local Hyper-V LAB Setup'
@@ -74,6 +75,7 @@ $main_form.Controls.Add($ComboBox)
 
 $main_form.ShowDialog()
 #>
+
 # Variablecleanup
 $VMPrefix = ""
 $VMSwitchName = ""
@@ -90,11 +92,12 @@ $oosiso = ""
 $ParentPath = ""
 $VMList = ""
 $VM = ""
+$LAB_selector  = ""
 
 #LAB list
-$LAB_selector  = "sfb2015-lab", "sfb2019-lab", "ex2016-lab", "ex2019-lab", "ex2013-lab"
+$LAB_selector  = "new-sfb2015-lab", "new-sfb2019-lab", "new-ex2016-lab", "new-ex2019-lab", "new-ex2013-lab"
 
-function sfb2015-lab {
+function new-sfb2015-lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -142,7 +145,7 @@ Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO"
 Set-VMFirmware -VMName $VM -EnableSecureBoot On `
 -FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
-? Device -like *DvD*).Device
+Where-Object Device -like *DvD*).Device
 }
 
 # SQL
@@ -205,7 +208,7 @@ $VMList = ""
 $VM = ""
 }
 
-function sfb2019-lab {
+function new-sfb2019-lab {
 ### Skype for Business 2019 (3*FE+SQL) + Exchange + Office Online Server
 
 $VMPrefix = "sfb19"
@@ -252,7 +255,7 @@ Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO"
 Set-VMFirmware -VMName $VM -EnableSecureBoot On `
 -FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
-? Device -like *DvD*).Device
+Where-Object Device -like *DvD*).Device
 }
 
 # SQL
@@ -315,7 +318,7 @@ $VMList = ""
 $VM = ""
 }
 
-function ex2016-lab {
+function new-ex2016-lab {
 ### Exchange 2016 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -363,7 +366,7 @@ Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO"
 Set-VMFirmware -VMName $VM -EnableSecureBoot On `
 -FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
-? Device -like *DvD*).Device
+Where-Object Device -like *DvD*).Device
 }
 
 # Exchange
@@ -408,7 +411,7 @@ $VMList = ""
 $VM = ""
 }
 
-function ex2019-lab {
+function new-ex2019-lab {
 ### Exchange 2019 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -456,7 +459,7 @@ Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO"
 Set-VMFirmware -VMName $VM -EnableSecureBoot On `
 -FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
-? Device -like *DvD*).Device
+Where-Object Device -like *DvD*).Device
 }
 
 # Exchange
@@ -501,7 +504,7 @@ $VMList = ""
 $VM = ""
 }
 
-function ex2013-lab {
+function new-ex2013-lab {
 ### Exchange 2013 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -549,7 +552,7 @@ Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO"
 Set-VMFirmware -VMName $VM -EnableSecureBoot On `
 -FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
-? Device -like *DvD*).Device
+Where-Object Device -like *DvD*).Device
 }
 
 # Exchange
@@ -630,6 +633,7 @@ Foreach ($LAB in $LAB_selector) {
 Get-Variable var_*
 
 $Null = $window.ShowDialog()
+
 ### Example VM Creation
 # $VMName = "VMNAME"
 # $VMPath = "E:\Hyper-V"

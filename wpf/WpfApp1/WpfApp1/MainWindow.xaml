@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:localhypervlab"
         mc:Ignorable="d"
-        Title="Local Hyper-V LAB" Height="450" Width="600">
+        Title="Local Hyper-V LAB" Height="450" Width="600" ResizeMode="NoResize">
     <Grid>
-        <TextBox HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" Text="Select your LAB type" VerticalAlignment="Top" Width="148" TextChanged="TextBox_TextChanged"/>
-        <ComboBox x:Name="LAB_selector" HorizontalAlignment="Left" Margin="163,21,0,0" VerticalAlignment="Top" Width="427" Cursor="Hand" SelectionChanged="LAB_selector_SelectionChanged"/>
+        <TextBox HorizontalAlignment="Left" Margin="10,23,0,0" TextWrapping="Wrap" Text="Select your LAB type" VerticalAlignment="Top" Width="120" IsEnabled="False" SelectionOpacity="0" />
+        <ComboBox x:Name="LAB_selector" HorizontalAlignment="Left" Margin="163,21,0,0" VerticalAlignment="Top" Width="418" Cursor="Hand" />
         <Border x:Name="Textbox_Frame" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Margin="0,52,0,82" Width="580">
-            <TextBox x:Name="Textbox" HorizontalAlignment="Center" Height="281" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="560" Margin="0,9,0,0"/>
+            <TextBox x:Name="Textbox" HorizontalAlignment="Center" Height="260" TextWrapping="Wrap" Text="text example" VerticalAlignment="Top" Width="560" Margin="0,9,0,0" IsEnabled="False"/>
         </Border>
-        <Button x:Name="Close" Content="Close" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top" Height="60" Width="120" Click="Button_Click"/>
-        <Button x:Name="Execute" Content="Execute" HorizontalAlignment="Left" Margin="470,364,0,0" VerticalAlignment="Top" Height="60" Width="120"/>
+        <Button x:Name="Close" Content="Close" HorizontalAlignment="Left" Margin="10,364,0,0" VerticalAlignment="Top" Height="40" Width="120" IsCancel="True" />
+        <Button x:Name="Execute" Content="Execute" HorizontalAlignment="Left" Margin="461,364,0,0" VerticalAlignment="Top" Height="40" Width="120"/>
 
     </Grid>
 </Window>

@@ -49,7 +49,7 @@ Labs in Functions:
 Import-Module Hyper-V
 Add-Type -assembly System.Windows.Forms
 Add-Type -AssemblyName PresentationFramework
-
+<#
 $main_form = New-Object System.Windows.Forms.Form
 $main_form.Text ='Local Hyper-V LAB Setup'
 $main_form.Width = 600
@@ -73,7 +73,7 @@ $ComboBox.Location  = New-Object System.Drawing.Point(130,10)
 $main_form.Controls.Add($ComboBox)
 
 $main_form.ShowDialog()
-
+#>
 # Variablecleanup
 $VMPrefix = ""
 $VMSwitchName = ""
@@ -90,6 +90,9 @@ $oosiso = ""
 $ParentPath = ""
 $VMList = ""
 $VM = ""
+
+#LAB list
+$LAB_selector  = "sfb2015-lab", "sfb2019-lab", "ex2016-lab", "ex2019-lab", "ex2013-lab"
 
 function sfb2015-lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
@@ -619,6 +622,11 @@ $xaml.SelectNodes("//*[@Name]") | ForEach-Object {
         throw
     }
 }
+
+Foreach ($LAB in $LAB_selector) {
+    $var_LAB_selector.Items.Add($LAB);
+}
+
 Get-Variable var_*
 
 $Null = $window.ShowDialog()

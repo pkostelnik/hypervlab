@@ -4,3 +4,13 @@ C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\
 C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\App.g.cs
 C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB_MarkupCompile.cache
 C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB_MarkupCompile.lref
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\bin\Debug\Local Hyper-V LAB.exe.config
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\bin\Debug\Local Hyper-V LAB.exe
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\bin\Debug\Local Hyper-V LAB.pdb
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\MainWindow.baml
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB.g.resources
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\localhypervlab.Properties.Resources.resources
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\localhypervlab.csproj.GenerateResource.cache
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\localhypervlab.csproj.CoreCompileInputs.cache
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB.exe
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB.pdb

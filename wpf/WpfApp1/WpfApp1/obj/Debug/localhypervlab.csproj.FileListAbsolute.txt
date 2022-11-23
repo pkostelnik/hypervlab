@@ -1,0 +1,6 @@
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\localhypervlab.csproj.AssemblyReference.cache
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\localhypervlab.csproj.SuggestedBindingRedirects.cache
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\MainWindow.g.cs
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\App.g.cs
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB_MarkupCompile.cache
+C:\Users\pkost\OneDrive - Microsoft\Dokumente\hypervlab\wpf\WpfApp1\WpfApp1\obj\Debug\Local Hyper-V LAB_MarkupCompile.lref

@@ -95,9 +95,9 @@ $VM = ""
 $LAB_selector  = ""
 
 #LAB list
-$LAB_selector  = "new-sfb2015-lab", "new-sfb2019-lab", "new-ex2016-lab", "new-ex2019-lab", "new-ex2013-lab"
+$LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab"
 
-function new-sfb2015-lab {
+function new-sfb2015lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -208,7 +208,7 @@ $VMList = ""
 $VM = ""
 }
 
-function new-sfb2019-lab {
+function new-sfb2019lab {
 ### Skype for Business 2019 (3*FE+SQL) + Exchange + Office Online Server
 
 $VMPrefix = "sfb19"
@@ -318,7 +318,7 @@ $VMList = ""
 $VM = ""
 }
 
-function new-ex2016-lab {
+function new-ex2016lab {
 ### Exchange 2016 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -411,7 +411,7 @@ $VMList = ""
 $VM = ""
 }
 
-function new-ex2019-lab {
+function new-ex2019lab {
 ### Exchange 2019 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS
@@ -504,7 +504,7 @@ $VMList = ""
 $VM = ""
 }
 
-function new-ex2013-lab {
+function new-ex2013lab {
 ### Exchange 2013 3*FE + Office Web App Server
 
 #Variables to differentiate different LABS

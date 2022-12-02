@@ -94,23 +94,31 @@ $VMList = ""
 $VM = ""
 $LAB_selector  = ""
 
+# Variables
+# VM location
+$VMPath = "E:\Hyper-V"
+# ISO location
+$ISOPath = "F:\iso\VS(MSDN)"
+# ISO Files
+$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso" #Windows Server 2019
+$sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
+$ex13iso = "Exchange\mu_exchange_server_2013_with_sp1_x64_dvd_4059293.iso" #Exchange Server 2013
+$ex16iso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
+$ex19iso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso" #Exchange Server 2019
+$sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
+$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
+#VHDX Parent path (Windows Server 2019)
+$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
+
 #LAB list
 $LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab"
 
 function new-sfb2015lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
 
-#Variables to differentiate different LABS
+#Variables to differentiate LABS
 $VMPrefix = "sfb15"
 $VMSwitchName = "x-$VMPrefix"
-$VMPath = "E:\Hyper-V"
-$ISOPath = "F:\iso\VS(MSDN)"
-$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso" #Windows Server 2019
-$sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
-$exiso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
-$sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
-$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force
@@ -213,14 +221,6 @@ function new-sfb2019lab {
 
 $VMPrefix = "sfb19"
 $VMSwitchName = "x-$VMPrefix"
-$VMPath = "E:\Hyper-V"
-$ISOPath = "F:\iso\VS(MSDN)"
-$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso"
-$sfbiso = "Skype for Business\de_skype_for_business_server_2019_x64_dvd_da7675e1.iso"
-$exiso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso"
-$sqliso = "SQL\de_sql_server_2019_enterprise_x64_dvd_25add11c.iso"
-$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso"
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force
@@ -324,16 +324,6 @@ function new-ex2016lab {
 #Variables to differentiate different LABS
 $VMPrefix = "ex16"
 $VMSwitchName = "x-$VMPrefix"
-$VMPath = "E:\Hyper-V"
-$ISOPath = "F:\iso\VS(MSDN)"
-$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso" #Windows Server 2019
-$sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
-$ex13iso = "Exchange\mu_exchange_server_2013_with_sp1_x64_dvd_4059293.iso" #Exchange Server 2013
-$ex16iso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
-$ex19iso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso" #Exchange Server 2019
-$sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
-$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force
@@ -417,16 +407,6 @@ function new-ex2019lab {
 #Variables to differentiate different LABS
 $VMPrefix = "ex19"
 $VMSwitchName = "x-$VMPrefix"
-$VMPath = "E:\Hyper-V"
-$ISOPath = "F:\iso\VS(MSDN)"
-$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso" #Windows Server 2019
-$sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
-$ex13iso = "Exchange\mu_exchange_server_2013_with_sp1_x64_dvd_4059293.iso" #Exchange Server 2013
-$ex16iso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
-$ex19iso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso" #Exchange Server 2019
-$sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
-$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force
@@ -510,16 +490,6 @@ function new-ex2013lab {
 #Variables to differentiate different LABS
 $VMPrefix = "ex13"
 $VMSwitchName = "x-$VMPrefix"
-$VMPath = "E:\Hyper-V"
-$ISOPath = "F:\iso\VS(MSDN)"
-$ISO = "Windows Server\de-de_windows_server_2019_updated_aug_2021_x64_dvd_a11b80c3.iso" #Windows Server 2019
-$sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
-$ex13iso = "Exchange\mu_exchange_server_2013_with_sp1_x64_dvd_4059293.iso" #Exchange Server 2013
-$ex16iso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
-$ex19iso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso" #Exchange Server 2019
-$sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
-$oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force

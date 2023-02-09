@@ -33,6 +33,21 @@ the other way is to download the products from your visualstudio subscription: <
 
 Here you will find some usefull PowerShell scripts, which will make a LAB deployement on Hyper-V (local) faster and hopefully also easier.
 
+## Prerequisites
+### VHDX
+
+The script buids a new VM based on differentiating VHDX File(s), so you need to create one VM Manually and Sysprep the system after updating it to the latest time.
+
+sysprep location: 
+
+systemdrive:\windows\system32\sysprep
+
+sysprep /oobe /generalize /shuutdown
+
+- oobe = (re)activate Out-of-Box-Experience
+- generalize = remove any GUID/UUID and such uniq identifyiers
+- shutdown = Shutdown the VM after sysprep cleanup
+
 ### Scripts included from 23.09.2022
 
 * VM Prepopulation (Working on GUI and automation)
@@ -41,6 +56,8 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 * install all prerequisites for office online server
 
 ## Variables used in the scripts (which should be selfexplaining 😎)
+
+... need to update the Variable List ...
 
 | Variable | meaning |
 |--|--:

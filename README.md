@@ -17,7 +17,8 @@ Being able to install VM's you need also some ISO Files for each System you wann
 some of them are available at: <https://www.microsoft.com/en-us/evalcenter/>
 | System | trial available | Link | Notes
 |--|:--:|:--:|--:|
-| Windows Server 2019 | [x] |<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019>|
+| Windows Server 2016 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016>|
+| Windows Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019>|
 | Windows Server 2022 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022>|
 | Windows 10 Enterprise |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise>|
 | Windows 11 Enterprise |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise>|
@@ -25,9 +26,14 @@ some of them are available at: <https://www.microsoft.com/en-us/evalcenter/>
 | Microsoft SQL Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2019>|
 | Microsoft SQL Server 2022 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2022>|
 | Skype for Business Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-skype-business-server-2019>|
+| SharePoint Server 2016 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sharepoint-server-2016>|
 | SharePoint Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sharepoint-server-2019>|
-| Microsoft Exchange Server 2019 | [] |<https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2019>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU)
-| Office Online Server | [] ||Office Online Server can be downloaded from the Volume Licensing Service Center (VLSC:<https://go.microsoft.com/fwlink/p/?LinkId=256561>). Office Online Server is a component of Office; therefore, it will be shown under each of the Office product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2016 for Mac Standard.
+| SharePoint Server Subsription Edition |[X]|<https://www.microsoft.com/de-DE/download/details.aspx?id=103599>|
+| Microsoft Exchange 2016 | [] | <https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2016>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU) or build your own ISO from the lates CU|
+| Microsoft Exchange Server 2019 | [] |<https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2019>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU) or build your own ISO from the lates CU|
+| Office Online Server | [] ||Office Online Server can be downloaded from the Volume Licensing Service Center (VLSC:<https://go.microsoft.com/fwlink/p/?LinkId=256561>). Office Online Server is a component of Office; therefore, it will be shown under each of the Office product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2016 for Mac Standard.|
+| System Center 2022 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-2022>|
+| System Center 2019 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-2019>|
 
 the other way is to download the products from your visualstudio subscription: <https://my.visualstudio.com/Downloads/Featured> as long you own one.
 

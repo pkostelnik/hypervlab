@@ -61,9 +61,7 @@ sysprep /oobe /generalize /shuutdown
 * rename and domainjoin VM
 * install all prerequisites for office online server
 
-## Variables used in the scripts (which should be selfexplaining 😎)
-
-... need to update the Variable List ...
+## Variables used in the scripts (which should be selfexplaining 🤓😎
 
 | Variable | meaning |
 |--|--:
@@ -76,7 +74,15 @@ sysprep /oobe /generalize /shuutdown
 |$exiso = ""| Exchange Server iSO name|
 |$sqliso = ""|SQL Server iSO name |
 |$oosiso = ""|Office Online Server iSO name |
-|$ParentPath = ""|where to find your prepared Windows Server vhdx file |
+|$ex13iso = ""| Exchange Server 2013 ISO name |
+|$ex16iso = ""| Exchange Server 2016 ISO name |
+|$ex19iso = ""| Exchange Server 2019 ISO name |
+|$sp16iso = ""| SharePoint Server 2016 ISO name |
+|$sp19iso = ""| SharePoint Server 2019 ISO name |
+|$spseiso = ""| SharePoint Server SE ISO name |
+|$ParentPath = ""| where to find your prepared Windows Server 2019 vhdx file |
+|$Parentws16 = ""| where to find your prepared Windows Server 2016 vhdx file |
+|$Parentws22 = ""| where to find your prepared Windows Server 2022 vhdx file |
 |$VMList = ""| all of your VM machines list|
 |$VM = ""| temporary variable for vm creation|
 

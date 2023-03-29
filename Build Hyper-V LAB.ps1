@@ -1,4 +1,4 @@
-﻿<#
+<#
 .SYNOPSIS
 Prepare a LOCAL Hyper-V Based LAB:
  * Skype for Business 2015
@@ -9,7 +9,8 @@ Prepare a LOCAL Hyper-V Based LAB:
  * 2019 Enterprise Lab = Windows Server 2019 + Skype for Business 2019 + Exchange 2019 + SharePoint 2019
  * 2016 Enterprise LAB = Windows Server 2016 + Skype for Business 2015 + Exchange 2016 + SharePoint 2016
  * Modern Enterprise LAB = TBD
-.DESCRIPTION
+
+ .DESCRIPTION
 As of now, the Base is build on:
 - creating separated private Networks for each LAB
 - creating defferentiating vhdx based on Widnows Server 2019 base image. (reducing space needed)

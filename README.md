@@ -17,7 +17,8 @@ Being able to install VM's you need also some ISO Files for each System you wann
 some of them are available at: <https://www.microsoft.com/en-us/evalcenter/>
 | System | trial available | Link | Notes
 |--|:--:|:--:|--:|
-| Windows Server 2019 | [x] |<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019>|
+| Windows Server 2016 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2016>|
+| Windows Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2019>|
 | Windows Server 2022 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-server-2022>|
 | Windows 10 Enterprise |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-10-enterprise>|
 | Windows 11 Enterprise |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-windows-11-enterprise>|
@@ -25,13 +26,33 @@ some of them are available at: <https://www.microsoft.com/en-us/evalcenter/>
 | Microsoft SQL Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2019>|
 | Microsoft SQL Server 2022 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sql-server-2022>|
 | Skype for Business Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-skype-business-server-2019>|
+| SharePoint Server 2016 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sharepoint-server-2016>|
 | SharePoint Server 2019 |[x]|<https://www.microsoft.com/en-us/evalcenter/evaluate-sharepoint-server-2019>|
-| Microsoft Exchange Server 2019 | [] |<https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2019>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU)
-| Office Online Server | [] ||Office Online Server can be downloaded from the Volume Licensing Service Center (VLSC:<https://go.microsoft.com/fwlink/p/?LinkId=256561>). Office Online Server is a component of Office; therefore, it will be shown under each of the Office product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2016 for Mac Standard.
+| SharePoint Server Subsription Edition |[X]|<https://www.microsoft.com/de-DE/download/details.aspx?id=103599>|
+| Microsoft Exchange 2016 | [] | <https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2016>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU) or build your own ISO from the lates CU|
+| Microsoft Exchange Server 2019 | [] |<https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019&WT.mc_id=M365-MVP-5003086#exchange-server-2019>| as there is no ISO for Exchange Server it's best to download it directly into you designated VM (use the latest CU) or build your own ISO from the lates CU|
+| Office Online Server | [] ||Office Online Server can be downloaded from the Volume Licensing Service Center (VLSC:<https://go.microsoft.com/fwlink/p/?LinkId=256561>). Office Online Server is a component of Office; therefore, it will be shown under each of the Office product pages including Office Standard 2016, Office Professional Plus 2016, and Office 2016 for Mac Standard.|
+| System Center 2022 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-2022>|
+| System Center 2019 |[X]|<https://www.microsoft.com/en-us/evalcenter/evaluate-system-center-2019>|
 
 the other way is to download the products from your visualstudio subscription: <https://my.visualstudio.com/Downloads/Featured> as long you own one.
 
 Here you will find some usefull PowerShell scripts, which will make a LAB deployement on Hyper-V (local) faster and hopefully also easier.
+
+## Prerequisites
+### VHDX
+
+The script buids a new VM based on differentiating VHDX File(s), so you need to create one VM Manually and Sysprep the system after updating it to the latest time.
+
+sysprep location: 
+
+systemdrive:\windows\system32\sysprep
+
+sysprep /oobe /generalize /shuutdown
+
+- oobe = (re)activate Out-of-Box-Experience
+- generalize = remove any GUID/UUID and such uniq identifyiers
+- shutdown = Shutdown the VM after sysprep cleanup
 
 ### Scripts included from 23.09.2022
 
@@ -40,7 +61,7 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 * rename and domainjoin VM
 * install all prerequisites for office online server
 
-## Variables used in the scripts (which should be selfexplaining 😎)
+## Variables used in the scripts (which should be selfexplaining 🤓😎
 
 | Variable | meaning |
 |--|--:
@@ -53,7 +74,15 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 |$exiso = ""| Exchange Server iSO name|
 |$sqliso = ""|SQL Server iSO name |
 |$oosiso = ""|Office Online Server iSO name |
-|$ParentPath = ""|where to find your prepared Windows Server vhdx file |
+|$ex13iso = ""| Exchange Server 2013 ISO name |
+|$ex16iso = ""| Exchange Server 2016 ISO name |
+|$ex19iso = ""| Exchange Server 2019 ISO name |
+|$sp16iso = ""| SharePoint Server 2016 ISO name |
+|$sp19iso = ""| SharePoint Server 2019 ISO name |
+|$spseiso = ""| SharePoint Server SE ISO name |
+|$ParentPath = ""| where to find your prepared Windows Server 2019 vhdx file |
+|$Parentws16 = ""| where to find your prepared Windows Server 2016 vhdx file |
+|$Parentws22 = ""| where to find your prepared Windows Server 2022 vhdx file |
 |$VMList = ""| all of your VM machines list|
 |$VM = ""| temporary variable for vm creation|
 

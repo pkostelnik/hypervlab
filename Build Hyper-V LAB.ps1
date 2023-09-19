@@ -46,6 +46,7 @@ Labs in Functions:
  * enterprise 2016 LAB | new-ent2016lab
  * enterprise 2019 LAB | new-ent2019lab
  * enterpriselab       | new-enterpriselab
+   Skype for Business 2015 (3*FE+SQL) + 3* Exchange 2016 + 3* Exchange 2019 + SharePoint 2016 + Office Online Server
 #>
 
 Import-Module Hyper-V
@@ -858,7 +859,6 @@ $VMList = ""
 $VM = ""
 $LAB_selector = ""
 }
-
 
 function new-enterpriselab {
 ### Skype for Business 2016 (3*FE+SQL) + 3* Exchange 2016 + SharePoint 2016 + Office Online Server

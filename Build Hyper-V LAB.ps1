@@ -74,31 +74,28 @@ $main_form.Controls.Add($ComboBox)
 $main_form.ShowDialog()
 #>
 
-# Variablecleanup
-<# Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
-#>
-
-Clear-Variable *
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 
 # Variables
 # VM location
@@ -210,28 +207,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-sfb2019lab {
@@ -318,28 +315,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2016lab {
@@ -407,28 +404,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2019lab {
@@ -496,28 +493,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2013lab {
@@ -585,28 +582,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ent2019lab {
@@ -711,28 +708,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ent2016lab {
@@ -837,28 +834,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 
@@ -981,28 +978,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable VMPrefix
-Clear-Variable VMSwitchName
-Clear-Variable VMPath
-Clear-Variable ISOPath
-Clear-Variable ISO
-Clear-Variable sfbiso
-Clear-Variable exiso
-Clear-Variable ex13iso
-Clear-Variable ex16iso
-Clear-Variable ex19iso
-Clear-Variable sp16iso
-Clear-Variable sp19iso
-Clear-Variable spseiso
-Clear-Variable sqliso
-Clear-Variable oosiso
-Clear-Variable ParentPath
-Clear-Variable Parentws16
-Clear-Variable Parentws22
-Clear-Variable VMList
-Clear-Variable VM
-Clear-Variable LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 

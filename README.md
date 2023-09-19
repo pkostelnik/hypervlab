@@ -52,7 +52,7 @@ sysprep command:
 
 options meaning:
 - oobe = (re)activate Out-of-Box-Experience
-- generalize = remove any GUID/UUID and such uniq identifyiers
+- generalize = remove any GUID/UUID and such uniq identifiers
 - shutdown = Shutdown the VM after sysprep cleanup
 
 ### Scripts included from 23.09.2022

@@ -38,13 +38,15 @@ User/data propagation
 	Authored date: September, 08, 2022
 	
 Labs in Functions:
- * sfb2015-lab
- * sfb2019-lab
- * ex2013-lab
- * ex2016-lab
- * ex2019-lab
- * enterprise 2016 LAB
- * enterprise 2019 LAB
+ * sfb2015-lab         | new-sfb2015lab
+ * sfb2019-lab         | new-sfb2019lab
+ * ex2013-lab          | new-ex2013lab
+ * ex2016-lab          | new-ex2016lab
+ * ex2019-lab          | new-ex2019lab
+ * enterprise 2016 LAB | new-ent2016lab
+ * enterprise 2019 LAB | new-ent2019lab
+ * enterpriselab       | new-enterpriselab
+   Skype for Business 2015 (3*FE+SQL) + 3* Exchange 2016 + 3* Exchange 2019 + SharePoint 2016 + Office Online Server
 #>
 
 Import-Module Hyper-V
@@ -74,28 +76,28 @@ $main_form.Controls.Add($ComboBox)
 $main_form.ShowDialog()
 #>
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 
 # Variables
 # VM location
@@ -114,7 +116,7 @@ $sp19iso = "SharePoint\de_sharepoint_server_2019_x64_dvd_7813fca4.iso" #SharePoi
 $spseiso = "SharePoint\de-de_sharepoint_server_subscription_edition_x64_dvd_921aefc4.iso" # SharePoint Subscription Edition
 $sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
 $oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-#VHDX Parent path (Windows Server 2019)
+#VHDX Parent path (Windows Server)
 $Parentws16 = "D:\Hyper-V\base\WS_2016_7.02.23.vhdx" #Windows Server 2016 Base Image (Updated: February, 07, 2023)
 $ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 $Parentws22 = "D:\Hyper-V\base\WS_2022_6.10.21.vhdx" #Windows Server 2022 Base Image (Updated: October, 06, 2021)
@@ -207,28 +209,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-sfb2019lab {
@@ -315,28 +317,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2016lab {
@@ -404,28 +406,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2019lab {
@@ -493,28 +495,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ex2013lab {
@@ -582,28 +584,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ent2019lab {
@@ -708,28 +710,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 function new-ent2016lab {
@@ -834,30 +836,29 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
-
 
 function new-enterpriselab {
 ### Skype for Business 2016 (3*FE+SQL) + 3* Exchange 2016 + SharePoint 2016 + Office Online Server
@@ -978,28 +979,28 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
-# Variablecleanup
-Clear-Variable $VMPrefix
-Clear-Variable $VMSwitchName
-Clear-Variable $VMPath
-Clear-Variable $ISOPath
-Clear-Variable $ISO
-Clear-Variable $sfbiso
-Clear-Variable $exiso
-Clear-Variable $ex13iso
-Clear-Variable $ex16iso
-Clear-Variable $ex19iso
-Clear-Variable $sp16iso
-Clear-Variable $sp19iso
-Clear-Variable $spseiso
-Clear-Variable $sqliso
-Clear-Variable $oosiso
-Clear-Variable $ParentPath
-Clear-Variable $Parentws16
-Clear-Variable $Parentws22
-Clear-Variable $VMList
-Clear-Variable $VM
-Clear-Variable $LAB_selector
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO = ""
+$sfbiso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$ParentPath = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
 }
 
 

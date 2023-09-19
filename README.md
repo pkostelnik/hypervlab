@@ -8,7 +8,7 @@ You need a "powerful" machine as Hyper-V Host:
 
 * CPU: Intel I5/7/9 or AMD Ryzen 5/7/9
 * Memory (RAM) 32 GB ++
-* SSD around 512 GB ++
+* SSD around 1024 GB ++
 
 If you are choosing/building a new one, do not spend too much on CPU, Memory is way the better way for better performance with more then 4 VM's.
 
@@ -45,11 +45,12 @@ Here you will find some usefull PowerShell scripts, which will make a LAB deploy
 The script buids a new VM based on differentiating VHDX File(s), so you need to create one VM Manually and Sysprep the system after updating it to the latest time.
 
 sysprep location: 
+`systemdrive:\windows\system32\sysprep`
 
-systemdrive:\windows\system32\sysprep
+sysprep command:
+`sysprep /oobe /generalize /shutdown`
 
-sysprep /oobe /generalize /shuutdown
-
+options meaning:
 - oobe = (re)activate Out-of-Box-Experience
 - generalize = remove any GUID/UUID and such uniq identifyiers
 - shutdown = Shutdown the VM after sysprep cleanup
@@ -60,6 +61,8 @@ sysprep /oobe /generalize /shuutdown
 * Install and Setup AD
 * rename and domainjoin VM
 * install all prerequisites for office online server
+* create ISO file from folder
+* Exchange Server prerequisites
 
 ## Variables used in the scripts (which should be selfexplaining 🤓😎
 

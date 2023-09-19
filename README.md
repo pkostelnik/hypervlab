@@ -64,7 +64,7 @@ options meaning:
 * create ISO file from folder
 * Exchange Server prerequisites
 
-## Variables used in the scripts (which should be selfexplaining 🤓😎
+## Variables used in the scripts (which should be selfexplaining) 🤓😎
 
 | Variable | meaning |
 |--|--:

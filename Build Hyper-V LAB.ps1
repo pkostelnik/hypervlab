@@ -38,13 +38,14 @@ User/data propagation
 	Authored date: September, 08, 2022
 	
 Labs in Functions:
- * sfb2015-lab
- * sfb2019-lab
- * ex2013-lab
- * ex2016-lab
- * ex2019-lab
- * enterprise 2016 LAB
- * enterprise 2019 LAB
+ * sfb2015-lab         | new-sfb2015lab
+ * sfb2019-lab         | new-sfb2019lab
+ * ex2013-lab          | new-ex2013lab
+ * ex2016-lab          | new-ex2016lab
+ * ex2019-lab          | new-ex2019lab
+ * enterprise 2016 LAB | new-ent2016lab
+ * enterprise 2019 LAB | new-ent2019lab
+ * enterpriselab       | new-enterpriselab
 #>
 
 Import-Module Hyper-V
@@ -114,7 +115,7 @@ $sp19iso = "SharePoint\de_sharepoint_server_2019_x64_dvd_7813fca4.iso" #SharePoi
 $spseiso = "SharePoint\de-de_sharepoint_server_subscription_edition_x64_dvd_921aefc4.iso" # SharePoint Subscription Edition
 $sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_12119061.iso" #SQL Server 2016
 $oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
-#VHDX Parent path (Windows Server 2019)
+#VHDX Parent path (Windows Server)
 $Parentws16 = "D:\Hyper-V\base\WS_2016_7.02.23.vhdx" #Windows Server 2016 Base Image (Updated: February, 07, 2023)
 $ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 $Parentws22 = "D:\Hyper-V\base\WS_2022_6.10.21.vhdx" #Windows Server 2022 Base Image (Updated: October, 06, 2021)

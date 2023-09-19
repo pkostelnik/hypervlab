@@ -75,7 +75,7 @@ $main_form.ShowDialog()
 #>
 
 # Variablecleanup
-Clear-Variable VMPrefix
+<# Clear-Variable VMPrefix
 Clear-Variable VMSwitchName
 Clear-Variable VMPath
 Clear-Variable ISOPath
@@ -96,6 +96,9 @@ Clear-Variable Parentws22
 Clear-Variable VMList
 Clear-Variable VM
 Clear-Variable LAB_selector
+#>
+
+Clear-Variable *
 
 # Variables
 # VM location

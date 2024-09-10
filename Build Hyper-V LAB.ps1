@@ -195,7 +195,7 @@ Set-VM -Name "$VMPrefix-LAB-Exchange" `
 -AutomaticStartAction Nothing `
 -AutomaticStopAction ShutDown
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-Exchange" `
--Path "$ISOPath\$EXISO"
+-Path "$ISOPath\$EX16ISO"
 # Skype For Business
 $VMList = "$VMPrefix-LAB-$VMPrefix-1",`
 "$VMPrefix-LAB-$VMPrefix-2",`
@@ -305,7 +305,7 @@ Set-VM -Name "$VMPrefix-LAB-Exchange" `
 -AutomaticStartAction Nothing `
 -AutomaticStopAction ShutDown
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-Exchange" `
--Path "$ISOPath\$EXISO"
+-Path "$ISOPath\$EX19ISO"
 # Skype For Business
 $VMList = "$VMPrefix-LAB-$VMPrefix-1",`
 "$VMPrefix-LAB-$VMPrefix-2",`

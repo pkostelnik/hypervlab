@@ -45,6 +45,7 @@ Labs in Functions:
  * ex2019-lab          | new-ex2019lab
  * enterprise 2016 LAB | new-ent2016lab
  * enterprise 2019 LAB | new-ent2019lab
+ * enterprise 2022 LAB | new-ent2022lab
  * VDI Remotehost LAB  | new-rmt2025lab
 --- still in prepare
  * enterprise upgr LAB | new-enterprise
@@ -107,12 +108,12 @@ $LAB_selector = ""
 
 # Variables
 # VM location
-$VMPath = "E:\Hyper-V"
+$VMPath = "F:\Hyper-V"
 # ISO location
-$ISOPath = "F:\iso\VS(MSDN)"
+$ISOPath = "E:\iso\VS(MSDN)"
 # ISO Files
 $ISO25DE = "Windows Server\de-de_windows_server_2025_preview_x64_dvd_1c3dfe1c.iso" #Windows Server 2025 DE-DE (Preview)
-$ISO22DE = "Windows Server\de-de_windows_server_2022_updated_april_2024_x64_dvd_164349f3.iso" #Widnows Server 2022 DE-DE
+$ISO22DE = "Windows Server\de-de_windows_server_2022_updated_sep_2024_x64_dvd_cab4e960.iso" #Widnows Server 2022 DE-DE
 $ISO22EN = "Windows Server\en-us_windows_server_2022_updated_april_2024_x64_dvd_164349f3.iso" #Windows Server 2022 EN-US
 $ISO16 = "Windows Server\de_windows_server_2016_x64_dvd_9327757.iso" #Windows Server 2016
 $ISO = "Windows Server\de-de_windows_server_2019_x64_dvd_132f7aa4.iso" #Windows Server 2019
@@ -133,7 +134,7 @@ $Parentws22 = "D:\Hyper-V\base\WS_2022_6.10.21.vhdx" #Windows Server 2022 Base I
 $Parentws25 = "D:\Hyper-V\base\WS_2025_pre.vhdx" #Windows Server 2025 Preview Base Image (Updated: 07.08.2024)
 
 #LAB list
-$LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab"
+$LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab", "new-ent2016lab", "new-ent2019lab", "new-ent2022lab", "new-rmt2025lab"
 
 function new-sfb2015lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
@@ -1017,7 +1018,7 @@ $LAB_selector = ""
 }
 
 function new-rmt2025lab {
-### on Windows Server 2025: Exchange 2019 + SharePoint SE + Office Online Server + 3 VDI Hosts
+### on Windows Server 2025: Exchange 2019 + SharePoint SE + Office Online Server + 2 VDI Hosts + Skype for Business 2019
 
 $VMPrefix = "rmt25"
 $VMSwitchName = "x-$VMPrefix"
@@ -1029,10 +1030,13 @@ $VMSwitchName = "x-$VMPrefix"
 $VMList = "$VMPrefix-LAB-DC",`
 "$VMPrefix-LAB-$VMPrefix-rdh1",`
 "$VMPrefix-LAB-$VMPrefix-rdh2",`
-"$VMPrefix-LAB-$VMPrefix-rdh3",`
+#"$VMPrefix-LAB-$VMPrefix-rdh3",`
 "$VMPrefix-LAB-$VMPrefix-ex19",`
 #"$VMPrefix-LAB-$VMPrefix-ex29",`
 #"$VMPrefix-LAB-$VMPrefix-ex39",`
+"$VMPrefix-LAB-$VMPrefix-sfb1",`
+#"$VMPrefix-LAB-$VMPrefix-sfb2",`
+#"$VMPrefix-LAB-$VMPrefix-sfb3",`
 "$VMPrefix-LAB-SQL",`
 "$VMPrefix-LAB-SP",`
 "$VMPrefix-LAB-oos",`
@@ -1072,8 +1076,7 @@ Add-VMDvdDrive -VMName "$VMPrefix-LAB-SQL" `
 -Path "$ISOPath\$SQLISO"
 # Remote Hosts
 $VMList = "$VMPrefix-LAB-$VMPrefix-rdh1",`
-"$VMPrefix-LAB-$VMPrefix-rdh2",`
-"$VMPrefix-LAB-$VMPrefix-rdh3"
+"$VMPrefix-LAB-$VMPrefix-rdh2"
 ForEach ($VM in $VMList) {
 Set-VM -Name $VM `
 -ProcessorCount 4 `
@@ -1084,13 +1087,12 @@ Set-VM -Name $VM `
 Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$ISO22DE"
 }
-<# Skype For Business
-$VMList = "$VMPrefix-LAB-$VMPrefix-sfb1",`
-"$VMPrefix-LAB-$VMPrefix-sfb2",`
-"$VMPrefix-LAB-$VMPrefix-sfb3"
+
+# Skype For Business
+$VMList = "$VMPrefix-LAB-$VMPrefix-sfb1"
 ForEach ($VM in $VMList) {
 Set-VM -Name $VM `
--ProcessorCount 2 `
+-ProcessorCount 4 `
 -DynamicMemory `
 -MemoryMaximumBytes 24GB `
 -AutomaticStartAction Nothing `
@@ -1098,7 +1100,7 @@ Set-VM -Name $VM `
 Add-VMDvdDrive -VMName $VM `
 -Path "$ISOPath\$sfbISO"
 }
-#>
+
 # Exchange 2019
 $VMList = "$VMPrefix-LAB-$VMPrefix-ex19"
 ForEach ($VM in $VMList) {

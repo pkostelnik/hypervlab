@@ -3,11 +3,14 @@
 Prepare a LOCAL Hyper-V Based LAB:
  * Skype for Business 2015
  * Skype for Business 2019
+ * Skype for Business 2019/SE
  * Exchange 2013
  * Exchange 2016
  * Exchange 2019
- * 2019 Enterprise Lab = Windows Server 2019 + Skype for Business 2019 + Exchange 2019 + SharePoint 2019
  * 2016 Enterprise LAB = Windows Server 2016 + Skype for Business 2015 + Exchange 2016 + SharePoint 2016
+ * 2019 Enterprise Lab = Windows Server 2019 + Skype for Business 2019 + Exchange 2019 + SharePoint 2019
+ * 2022 Enterprise Lab = Windows Server 2022 + Skype for Business 2019 + Exchange 2019 + SharePoint SE
+ * 2025 Enterprise Lab = Windows Server 2025 + Skype for Business 2019/SE + Exchange SE + SharePoint SE
  * Modern Enterprise LAB = TBD
 
  .DESCRIPTION
@@ -16,7 +19,7 @@ As of now, the Base is build on:
 - creating defferentiating vhdx based on Widnows Server 2019 base image. (reducing space needed)
 - attaching VM's to the right Network
 - attaching the right ISO Files for each System (Exchange, SQL, SfB + Windows Server ISO)
-In my case the base VHDX File is in GERMAN, but you can always build your own and exchange in: $ParentPath.
+In my case the base VHDX File is in GERMAN, but you can always build your own and exchange in: $Parentws19.
 .EXAMPLE
 Building a Full BASE Infrastructure for Skype for Business 2015/2019:
 All VM's based on Windows Server 2019:
@@ -40,12 +43,14 @@ User/data propagation
 Labs in Functions:
  * sfb2015-lab         | new-sfb2015lab
  * sfb2019-lab         | new-sfb2019lab
+ * sfbse-lab           | new-sfbselab
  * ex2013-lab          | new-ex2013lab
  * ex2016-lab          | new-ex2016lab
  * ex2019-lab          | new-ex2019lab
  * enterprise 2016 LAB | new-ent2016lab
  * enterprise 2019 LAB | new-ent2019lab
  * enterprise 2022 LAB | new-ent2022lab
+ * enterprise 2025 LAB | new-ent2025lab
  * VDI Remotehost LAB  | new-rmt2025lab
 --- still in prepare
  * enterprise upgr LAB | new-enterprise
@@ -89,16 +94,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $Parentws25 = ""
@@ -118,10 +125,11 @@ $ISO22EN = "Windows Server\en-us_windows_server_2022_updated_april_2024_x64_dvd_
 $ISO16 = "Windows Server\de_windows_server_2016_x64_dvd_9327757.iso" #Windows Server 2016
 $ISO = "Windows Server\de-de_windows_server_2019_x64_dvd_132f7aa4.iso" #Windows Server 2019
 $sfbiso = "Skype for Business\de_skype_for_business_server_2015_x64_dvd_6622057.iso" #Skype for Business 2015
+$sfb19iso = "Skype for Business\de_skype_for_business_server_2019_x64_dvd_da7675e1.iso" #Skype for Business 2019
 $ex13iso = "Exchange\mu_exchange_server_2013_with_sp1_x64_dvd_4059293.iso" #Exchange Server 2013
 $ex16iso = "Exchange\mul_exchange_server_2016_cumulative_update_23_x64_dvd_a7c5e6ee.iso" #Exchange Server 2016
 $ex19iso = "Exchange\mul_exchange_server_2019_cumulative_update_12_x64_dvd_52bf3153.iso" #Exchange Server 2019
-#$exseiso = "Exchange\" #Exchange Subscription Edition
+$exseiso = "Exchange\ExchangeServerSE-x64.iso" #Exchange Subscription Edition
 $sp16iso = "SharePoint\de_sharepoint_server_2016_x64_dvd_8419462.iso" #SharePoint 2016
 $sp19iso = "SharePoint\de_sharepoint_server_2019_x64_dvd_7813fca4.iso" #SharePoint 2019
 $spseiso = "SharePoint\de-de_sharepoint_server_subscription_edition_x64_dvd_921aefc4.iso" # SharePoint Subscription Edition
@@ -129,12 +137,12 @@ $sqliso = "SQL\de_sql_server_2016_enterprise_with_service_pack_2_x64_dvd_1211906
 $oosiso = "de_office_online_server_last_updated_november_2018_x64_dvd_e1b74239.iso" #Office Online Server
 #VHDX Parent path (Windows Server)
 $Parentws16 = "D:\Hyper-V\base\WS_2016_7.02.23.vhdx" #Windows Server 2016 Base Image (Updated: February, 07, 2023)
-$ParentPath = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
+$Parentws19 = "D:\Hyper-V\base\WS_2019_18.09.22.vhdx" #Windows Server 2019 Base Image (Updated: September, 18, 2022)
 $Parentws22 = "D:\Hyper-V\base\WS_2022_6.10.21.vhdx" #Windows Server 2022 Base Image (Updated: October, 06, 2021)
 $Parentws25 = "D:\Hyper-V\base\WS_2025_pre.vhdx" #Windows Server 2025 Preview Base Image (Updated: 07.08.2024)
 
 #LAB list
-$LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab", "new-ent2016lab", "new-ent2019lab", "new-ent2022lab", "new-rmt2025lab"
+$LAB_selector  = "new-sfb2015lab", "new-sfb2019lab", "new-ex2016lab", "new-ex2019lab", "new-ex2013lab", "new-ent2016lab", "new-ent2019lab", "new-ent2022lab", "new-ent2025lab", "new-rmt2025lab"
 
 function new-sfb2015lab {
 ### Skype for Business 2015 (3*FE+SQL) + Exchange + Office Web App Server
@@ -159,7 +167,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -230,16 +238,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -269,7 +279,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -319,7 +329,7 @@ Set-VM -Name $VM `
 -AutomaticStartAction Nothing `
 -AutomaticStopAction ShutDown
 Add-VMDvdDrive -VMName $VM `
--Path "$ISOPath\$sfbISO"
+-Path "$ISOPath\$sfb19iso"
 }
 # Office Online Server
 Set-VM -Name "$VMPrefix-LAB-oos" `
@@ -340,16 +350,130 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
+}
+
+function new-sfbselab {
+### Skype for Business 2019/SE (3*FE+SQL) + Exchange SE + Office Online Server
+
+$VMPrefix = "sfbse"
+$VMSwitchName = "x-$VMPrefix"
+
+# commented because of my VM Networking Setup
+#Remove-VMSwitch -Name $VMSwitchName -Force
+#New-VMSwitch -Name $VMSwitchName -SwitchType Private -Notes "Switch for Skype for Business 2019 Lab named: $VMSwitchName" 
+
+$VMList = "$VMPrefix-LAB-DC",`
+"$VMPrefix-LAB-$VMPrefix-1",`
+"$VMPrefix-LAB-$VMPrefix-2",`
+"$VMPrefix-LAB-$VMPrefix-3",`
+"$VMPrefix-LAB-SQL",`
+"$VMPrefix-LAB-Exchange",`
+"$VMPrefix-LAB-oos",`
+"$VMPrefix-LAB-Client"
+
+ForEach ($VM in $VMList) {
+New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
+-Differencing `
+-ParentPath $Parentws22
+New-VM -Name $VM `
+-Generation 2 `
+-MemoryStartupBytes 2GB `
+-VHDPath "$VMPath\$VM\$VM.vhdx" `
+-SwitchName $VMSwitchName `
+-GuestStateIsolationType 'TrustedLaunch'
+Set-VM -Name $VM `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 16GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$ISO"
+Set-VMFirmware -VMName $VM -EnableSecureBoot On `
+-FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
+Where-Object Device -like *DvD*).Device
+}
+
+# SQL
+Set-VM -Name "$VMPrefix-LAB-SQL" `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 32GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-SQL" `
+-Path "$ISOPath\$SQLISO"
+# Exchange
+Set-VM -Name "$VMPrefix-LAB-Exchange" `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 32GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-Exchange" `
+-Path "$ISOPath\$EXseISO"
+# Skype For Business
+$VMList = "$VMPrefix-LAB-$VMPrefix-1",`
+"$VMPrefix-LAB-$VMPrefix-2",`
+"$VMPrefix-LAB-$VMPrefix-3"
+ForEach ($VM in $VMList) {
+Set-VM -Name $VM `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 24GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$sfb19iso"
+}
+# Office Online Server
+Set-VM -Name "$VMPrefix-LAB-oos" `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 16GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
+-Path "$ISOPath\$OOSISO"
+
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO22DE = ""
+$ISO22EN = ""
+$ISO = ""
+$sfbiso = ""
+$sfb19iso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$exseiso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -378,7 +502,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -431,16 +555,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -469,7 +595,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -522,16 +648,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -560,7 +688,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -613,16 +741,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -655,7 +785,7 @@ $VMList = "$VMPrefix-LAB-DC",`
 ForEach ($VM in $VMList) {
 New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
 -Differencing `
--ParentPath $ParentPath
+-ParentPath $Parentws19
 New-VM -Name $VM `
 -Generation 2 `
 -MemoryStartupBytes 2GB `
@@ -741,16 +871,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -869,16 +1001,18 @@ $ISO22DE = ""
 $ISO22EN = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $VMList = ""
@@ -887,19 +1021,19 @@ $LAB_selector = ""
 }
 
 function new-ent2022lab {
-### 3* Exchange 2019 + SharePoint SE + Office Online Server
+### 3* Exchange 2019 + SharePoint SE + Office Online Server + 3* Skype for Business 2019
 
 $VMPrefix = "ent22"
 $VMSwitchName = "x-$VMPrefix"
 
 # commented because of my VM Networking Setup
 #Remove-VMSwitch -Name $VMSwitchName -Force
-#New-VMSwitch -Name $VMSwitchName -SwitchType Private -Notes "Switch for 2016 Enterprise Lab named: $VMSwitchName" 
+#New-VMSwitch -Name $VMSwitchName -SwitchType Private -Notes "Switch for 2022 Enterprise Lab named: $VMSwitchName" 
 
 $VMList = "$VMPrefix-LAB-DC",`
-#"$VMPrefix-LAB-$VMPrefix-sfb1",`
-#"$VMPrefix-LAB-$VMPrefix-sfb2",`
-#"$VMPrefix-LAB-$VMPrefix-sfb3",`
+"$VMPrefix-LAB-$VMPrefix-sfb1",`
+"$VMPrefix-LAB-$VMPrefix-sfb2",`
+"$VMPrefix-LAB-$VMPrefix-sfb3",`
 "$VMPrefix-LAB-$VMPrefix-ex19",`
 "$VMPrefix-LAB-$VMPrefix-ex29",`
 "$VMPrefix-LAB-$VMPrefix-ex39",`
@@ -989,6 +1123,19 @@ Set-VM -Name "$VMPrefix-LAB-oos" `
 Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
 -Path "$ISOPath\$OOSISO"
 
+# Skype For Business
+$VMList = "$VMPrefix-LAB-$VMPrefix-sfb1"
+ForEach ($VM in $VMList) {
+Set-VM -Name $VM `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 24GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$sfb19iso"
+}
+
 #Variablecleanup
 $VMPrefix = ""
 $VMSwitchName = ""
@@ -999,16 +1146,164 @@ $ISO22EN = ""
 $ISO25DE = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
+$Parentws16 = ""
+$Parentws22 = ""
+$Parentws25 = ""
+$VMList = ""
+$VM = ""
+$LAB_selector = ""
+}
+
+function new-ent2025lab {
+### 3* Exchange SE + SharePoint SE + Office Online Server + 3* Skype for Business 2019/SE
+
+$VMPrefix = "ent25"
+$VMSwitchName = "x-$VMPrefix"
+
+# commented because of my VM Networking Setup
+#Remove-VMSwitch -Name $VMSwitchName -Force
+#New-VMSwitch -Name $VMSwitchName -SwitchType Private -Notes "Switch for 2025 Enterprise Lab named: $VMSwitchName" 
+
+$VMList = "$VMPrefix-LAB-DC",`
+"$VMPrefix-LAB-$VMPrefix-sfb1",`
+"$VMPrefix-LAB-$VMPrefix-sfb2",`
+"$VMPrefix-LAB-$VMPrefix-sfb3",`
+"$VMPrefix-LAB-$VMPrefix-ex19",`
+"$VMPrefix-LAB-$VMPrefix-ex29",`
+"$VMPrefix-LAB-$VMPrefix-ex39",`
+"$VMPrefix-LAB-SQL",`
+"$VMPrefix-LAB-SP",`
+"$VMPrefix-LAB-oos",`
+"$VMPrefix-LAB-Client"
+
+ForEach ($VM in $VMList) {
+New-VHD -Path "$VMPath\$VM\$VM.vhdx" `
+-Differencing `
+-ParentPath $Parentws22
+New-VM -Name $VM `
+-Generation 2 `
+-MemoryStartupBytes 2GB `
+-VHDPath "$VMPath\$VM\$VM.vhdx" `
+-SwitchName $VMSwitchName `
+-GuestStateIsolationType 'TrustedLaunch'
+Set-VM -Name $VM `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 16GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$ISO22DE"
+Set-VMFirmware -VMName $VM -EnableSecureBoot On `
+-FirstBootDevice ((Get-VMFirmware -VMName $VM).BootOrder | 
+Where-Object Device -like *DvD*).Device
+}
+
+<# SQL
+Set-VM -Name "$VMPrefix-LAB-SQL" `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 32GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-SQL" `
+-Path "$ISOPath\$SQLISO"
+# Skype For Business
+$VMList = "$VMPrefix-LAB-$VMPrefix-sfb1",`
+"$VMPrefix-LAB-$VMPrefix-sfb2",`
+"$VMPrefix-LAB-$VMPrefix-sfb3"
+ForEach ($VM in $VMList) {
+Set-VM -Name $VM `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 24GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$sfbISO"
+}
+#>
+# Exchange 2019
+$VMList = "$VMPrefix-LAB-$VMPrefix-ex19",`
+"$VMPrefix-LAB-$VMPrefix-ex29",`
+"$VMPrefix-LAB-$VMPrefix-ex39"
+ForEach ($VM in $VMList) {
+Set-VM -Name $VM `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 24GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$ex19iso"
+}
+# SharePoint
+Set-VM -Name "$VMPrefix-LAB-SP" `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 32GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-SP" `
+-Path "$ISOPath\$spseiso"
+
+# Office Online Server
+Set-VM -Name "$VMPrefix-LAB-oos" `
+-ProcessorCount 2 `
+-DynamicMemory `
+-MemoryMaximumBytes 16GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName "$VMPrefix-LAB-oos" `
+-Path "$ISOPath\$OOSISO"
+
+# Skype For Business
+$VMList = "$VMPrefix-LAB-$VMPrefix-sfb1"
+ForEach ($VM in $VMList) {
+Set-VM -Name $VM `
+-ProcessorCount 4 `
+-DynamicMemory `
+-MemoryMaximumBytes 24GB `
+-AutomaticStartAction Nothing `
+-AutomaticStopAction ShutDown
+Add-VMDvdDrive -VMName $VM `
+-Path "$ISOPath\$sfb19iso"
+}
+
+#Variablecleanup
+$VMPrefix = ""
+$VMSwitchName = ""
+$VMPath = ""
+$ISOPath = ""
+$ISO22DE = ""
+$ISO22EN = ""
+$ISO25DE = ""
+$ISO = ""
+$sfbiso = ""
+$sfb19iso = ""
+$exiso = ""
+$ex13iso = ""
+$ex16iso = ""
+$ex19iso = ""
+$exseiso = ""
+$sp16iso = ""
+$sp19iso = ""
+$spseiso = ""
+$sqliso = ""
+$oosiso = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $Parentws25 = ""
@@ -1143,16 +1438,18 @@ $ISO22EN = ""
 $ISO25DE = ""
 $ISO = ""
 $sfbiso = ""
+$sfb19iso = ""
 $exiso = ""
 $ex13iso = ""
 $ex16iso = ""
 $ex19iso = ""
+$exseiso = ""
 $sp16iso = ""
 $sp19iso = ""
 $spseiso = ""
 $sqliso = ""
 $oosiso = ""
-$ParentPath = ""
+$Parentws19 = ""
 $Parentws16 = ""
 $Parentws22 = ""
 $Parentws25 = ""

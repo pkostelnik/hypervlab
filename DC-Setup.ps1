@@ -2,8 +2,8 @@
 # Windows PowerShell-Skript für AD DS-Bereitstellung
 #
 
-$Domain = "rmt22.lab"
-$NetBIOS = "rmt22"
+$Domain = "ent22.lab"
+$NetBIOS = "ent22"
 $Safemodepass = "PhaggyK26"
 $SecureSafeMmodePass = ConvertTo-SecureString $Safemodepass -AsPlainText -Force
 
